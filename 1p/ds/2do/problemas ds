@@ -1,0 +1,69 @@
+//1. object
+	//   attach(n)
+	// -> n random name
+	// <- random name added
+	//jose raul estrada cruz 2A
+	
+	let objeto = {name1: "raul", apellido:"estrada", apellido2:'cruz'};
+	
+
+	 
+	function valorO(o){
+	 let num=Math.floor(Math.random()*10);
+	 o.edad = num;
+	}
+	
+
+	valorO(objeto);
+
+
+
+
+
+//2. set
+	//   attach(n)//wrap the method 'add'
+	// -> n random integer
+	// <-
+	//jose raul estradad cruz 2-A
+	let set=new Set();
+	const jk=(k)=>set.add(k)
+	set.add('jose')
+	set.add('raul');
+	set.add('estrada');
+	set.add('cruz');
+	//set.add('edad');
+	let number=Math.floor(Math.random()*100);
+	console.log(set);
+	jk(number)
+
+
+//jose raul estrada cruz 2A
+	//3. map
+	//   attach(n)//wrap the method 'set'
+	// -> n random integer
+	// <- 
+	  let m=new Map();
+	  m.set('jose','nombre');
+	  m.set('raul', 'nombre2');
+	  m.set('estrada', 'apellido');
+	  m.set('cruz', 'apellido2');
+	  m.set(18 , 'edad');
+	
+
+	  console.log(m );
+	  
+
+//jose raul estrada cruz 2A
+	
+
+	let myarray = [];
+	function attach(myarray){
+	 for(let i = 0; i<10; i++){
+	 let numerosA=Math.floor(Math.random()*20);
+	 myarray.push(numerosA);
+	 }
+	}
+	attach(myarray);
+	document.write( myarray);
+
+

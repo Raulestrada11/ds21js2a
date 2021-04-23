@@ -1,0 +1,160 @@
+	<script>
+	//1. Least common multiple
+	//   lcm(a,b)
+	// -> a integer
+	// -> b integer
+	// <- lcm 
+	//jose raul estrada cruz 2-A
+	//Solucion sin funciones
+	let a = prompt('Ingresa un numero: ');
+	let b = prompt('Ingresa un numero: ');
+	let grande = Math.max(a,b);
+	let chico = Math.min(a,b);
+	let div = grande;
+	  
+	  while(div % chico !== 0){
+	    div = div + grande;
+	  }
+	
+
+	document.write('El MCM de '+a+' y '+b+' es: '+div+'.');
+	  
+	//Solucion con funciones
+	let a = prompt('Ingresa un numero: ');
+	let b = prompt('Ingresa un numero: ');
+	
+
+	function LCM(a,b){
+	let grande = Math.max(a,b);
+	let chico = Math.min(a,b);
+	let div = grande;
+	  
+	  while(div % chico !== 0){
+	    div = div + grande;
+	  }
+	  return div;
+	}
+	
+
+	document.write('El MCM de '+a+' y '+b+' es: '+LCM(a,b)+'.');
+	</script>
+
+
+
+
+
+
+<script>
+	//2. sieve of Eratosthenes
+	//   sieve(n)
+	// -> n integer
+	// <- the n first elements
+	//jose raul estrada cruz 2-A
+	//Solucion sin funciones
+	let n = prompt('Ingresa un numero:');
+	
+
+	let todos = [];
+	for(i=2;i<n;i++){
+		todos.push(i);
+	}
+	//borramos pares
+	for(let i=1;i<todos.length;i++){
+		if(todos[i]%2 == 0)
+	    todos.splice(i,1);
+	}
+	//borramos multiplos de 3
+	for(let i=1;i<todos.length;i++){
+	  if(todos[i] !== 3 && todos[i]%3 == 0)
+	    todos.splice(i,1);
+	}
+	//borramos multiplos de 5
+	for(let i=1;i<todos.length;i++){
+	  if(todos[i] !== 5 && todos[i]%5 == 0)
+	    todos.splice(i,1);
+	}
+	document.write('Los numeros correspondientes a la criba de Eratóstenes menores a '+n+' son: '+todos+'.');
+	//Solucion con funciones
+	let n = prompt('Ingresa un numero:');
+	function eratosthenes(n){
+	let todos = [];
+	for(i=2;i<n;i++){
+		todos.push(i);
+	}
+	//borramos pares
+	for(let i=1;i<todos.length;i++){
+		if(todos[i]%2 == 0)
+	    todos.splice(i,1);
+	}
+	//borramos multiplos de 3
+	for(let i=1;i<todos.length;i++){
+	  if(todos[i] !== 3 && todos[i]%3 == 0)
+	    todos.splice(i,1);
+	}
+	//borramos multiplos de 5
+	for(let i=1;i<todos.length;i++){
+	  if(todos[i] !== 5 && todos[i]%5 == 0)
+	    todos.splice(i,1);
+	}
+	  return todos;
+	}
+	document.write('Los numeros correspondientes a la criba de Eratóstenes menores a '+n+' son: '+eratosthenes(n)+'.');
+	</script>
+
+
+
+
+<script>
+	//3. random number
+	//   random(n)
+	// -> n integer
+	// <- one random number in [1-n]
+	//jose raul estrada cruz 2-A
+	//Solucion sin funciones
+	let n = prompt('Ingresa un numero');
+	
+
+	let rnd = Math.floor(1 + (Math.random()) *(n));
+	document.write('Numero aleatorio entre 1 y '+n+' es:'+rnd+'.');
+	//Solucion con funciones
+	let n = prompt('Ingresa un numero');
+	  
+	function aleatorio(n){
+	  let rnd = Math.floor(1 + (Math.random()) *(n));
+	  return rnd;
+	}
+	document.write('Numero aleatorio entre 1 y '+n+' es:'+aleatorio(n)+'.');
+	</script>
+
+
+
+
+
+
+<script>
+	//4. random name
+	//   randomName()
+	// -> 
+	// <- one random name
+	// ie nameXYZ
+	//jose raul estrada cruz
+	//Solucion sin funciones
+	var name ='';
+	for(i = 0;i<8;i++){
+	  let rnd = Math.floor(97 + Math.random() * (122 - 97 + 1));
+	  name = name.concat(String.fromCharCode(rnd));
+	}
+	document.write('El nombre aleatorio generado es: '+name);
+	//Solucion con funciones
+	function randomName(){
+	  var name ='';
+	  for(i = 0;i<8;i++){
+	  let rnd = Math.floor(97 + Math.random() * (122 - 97 + 1));
+	  name = name.concat(String.fromCharCode(rnd));
+	}
+		return name;
+	}
+	document.write('El nombre aleatorio generado es: '+randomName());
+	</script>
+
+
